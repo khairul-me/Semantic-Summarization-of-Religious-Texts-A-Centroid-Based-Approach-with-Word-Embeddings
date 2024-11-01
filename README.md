@@ -1,0 +1,1 @@
+# Semantic-Summarization-of-Religious-Texts-A-Centroid-Based-Approach-with-Word-Embeddings
