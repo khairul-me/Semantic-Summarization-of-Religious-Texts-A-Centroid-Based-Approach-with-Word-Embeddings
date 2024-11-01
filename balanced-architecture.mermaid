@@ -1,0 +1,39 @@
+flowchart LR
+    subgraph Input
+        ST[Source Text] --> DL[Document Loader]
+        DL --> PP[Preprocessor]
+    end
+
+    PP --> WEG
+
+    subgraph Embedding
+        WEG[Word Embedding Generator]
+        WEG --> SE[Sentence Encoder]
+        WEG --> CC[Centroid Calculator]
+    end
+
+    SE --> SS
+    CC --> SS
+
+    subgraph Summarization
+        SS[Similarity Scorer] --> RC[Redundancy Checker]
+        RC --> SG[Summary Generator]
+    end
+
+    SG --> SF
+
+    subgraph Output
+        SF[Summary Formatter] --> FS[Final Summary]
+    end
+
+    style ST fill:#E6E6FA
+    style DL fill:#E6E6FA
+    style PP fill:#E6E6FA
+    style WEG fill:#E6E6FA
+    style SE fill:#E6E6FA
+    style CC fill:#E6E6FA
+    style SS fill:#E6E6FA
+    style RC fill:#E6E6FA
+    style SG fill:#E6E6FA
+    style SF fill:#E6E6FA
+    style FS fill:#E6E6FA
